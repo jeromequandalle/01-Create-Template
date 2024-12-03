@@ -16,7 +16,7 @@ provisioner "remote-exec" {
 	inline= [
         "cp /tmp/create_templates_qemu.sh .",
         "chmod +x create_templates_qemu.sh",
-        "bash create_templates_qemu.sh"
+        "sh create_templates_qemu.sh"
          ]
   }
 }
