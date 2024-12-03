@@ -41,7 +41,7 @@ pvesh create /pools --poolid zone.templates --comment "les templates sont la"
 
 # Templates 
 create_template 9001 "debian.template" "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
-create_template 9002 "alma.template" "https://repo.almalinux.org/almalinux/9/cloud/x86_64/images/AlmaLinux-9-GenericCloud-9.4-20240507.x86_64.qcow2"
+create_template 9002 "alma.template" "https://repo.almalinux.org/almalinux/9/cloud/x86_64/images/AlmaLinux-9-GenericCloud-9.5-20241120.x86_64.qcow2"
 create_template 9003 "ubuntu.last.template" "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
 create_template 9004 "ubuntu.lts.template" "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img"
 
