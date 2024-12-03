@@ -19,7 +19,7 @@ create_template() {
     echo "Création du template $name"
     mkdir -p "$name"
     cd "$name"
-    #wget "$url"
+    wget "$url"
     qm create "$id" --name "$name" --net0 virtio,bridge="$BRIDGE" --scsihw virtio-scsi-single
     qm set "$id" --scsi0 "${STORAGE_POOL}:0,iothread=1,backup=off,format=qcow2,import-from=${TEMPLATE_DIR}/${name}/${img_file}"
     qm disk resize "$id" scsi0 "$DISK_SIZE"
