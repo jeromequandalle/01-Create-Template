@@ -40,9 +40,9 @@ create_template() {
 
 
 #création des pools 
-pvesh create /pools --poolid zone-relais --comment "Pool pré-production et developemenet"
+pvesh create /pools --poolid zone-relais --comment "Pool zone Relais"
 pvesh create /pools --poolid zone-exposee --comment "pool infrastructure exposée sur le net"
-pvesh create /pools --poolid zone-interne --comment "pool pour les micro-services"
+pvesh create /pools --poolid zone-interne --comment "pool service interne"
 pvesh create /pools --poolid zone.templates --comment "les templates sont la"
 
 # Templates 
@@ -51,10 +51,10 @@ create_template 9002 "alma.template" "https://repo.almalinux.org/almalinux/9/clo
 create_template 9003 "ubuntu.last.template" "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
 create_template 9004 "ubuntu.lts.template" "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img"
 
-pvesh set /pools/templates.templates --vm 9001
-pvesh set /pools/templates.templates --vm 9002
-pvesh set /pools/templates.templates --vm 9003
-pvesh set /pools/templates.templates --vm 9004
+pvesh set /pools/zone.templates --vm 9001
+pvesh set /pools/zone.templates --vm 9002
+pvesh set /pools/zone.templates --vm 9003
+pvesh set /pools/zone.templates --vm 9004
 
 
 echo "Fin de création du paramétrage de bases de  proxmox"
