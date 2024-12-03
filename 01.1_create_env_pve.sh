@@ -1,5 +1,4 @@
 #!/bin/sh
-
 # Variables communes
 TEMPLATE_DIR="/root/cloud-version"
 STORAGE_POOL="local-lvm"
@@ -8,22 +7,18 @@ CORES=2
 MEMORY=2048
 DISK_SIZE="10G"
 CLOUDINIT_DISK="${STORAGE_POOL}:cloudinit"
-
 # Création de répertoires et de l'arborescence de travail
 mkdir -p "$TEMPLATE_DIR"
 cd "$TEMPLATE_DIR"
-
 # Fonction pour créer un template
 create_template() {
     local id=$1
     local name=$2
     local url=$3
     local img_file=$(basename "$url")
-
     echo "Création du template $name"
     mkdir -p "$name"
     cd "$name"
-
     #wget "$url"
     qm create "$id" --name "$name" --net0 virtio,bridge="$BRIDGE" --scsihw virtio-scsi-single
     qm set "$id" --scsi0 "${STORAGE_POOL}:0,iothread=1,backup=off,format=qcow2,import-from=${TEMPLATE_DIR}/${name}/${img_file}"
@@ -33,7 +28,6 @@ create_template() {
     qm set "$id" --ide2 "$CLOUDINIT_DISK"
     qm set "$id" --agent enabled=1
     qm template "$id"
-
     cd ..
     echo "Fin de création du template $name"
 }
