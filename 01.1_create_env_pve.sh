@@ -37,6 +37,7 @@ create_template() {
 pvesh create /pools --poolid zone-relais --comment "Pool zone Relais"
 pvesh create /pools --poolid zone-exposee --comment "pool infrastructure exposée sur le net"
 pvesh create /pools --poolid zone-interne --comment "pool service interne"
+pvesh create /pools --poolid zone-testing --comment "pool pour testing"
 pvesh create /pools --poolid zone.templates --comment "les templates sont la"
 
 # Templates 
