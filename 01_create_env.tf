@@ -18,8 +18,7 @@ provisioner "remote-exec" {
         "chown root create_templates_qemu.sh",
         "chmod +x create_templates_qemu.sh",
         "./create_templates_qemu.sh"
-          
-        ]
+         ]
   }
 }
 
