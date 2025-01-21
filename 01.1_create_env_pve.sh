@@ -38,18 +38,16 @@ pvesh create /pools --poolid zone-relais --comment "Pool zone Relais"
 pvesh create /pools --poolid zone-exposee --comment "pool infrastructure exposée sur le net"
 pvesh create /pools --poolid zone-interne --comment "pool service interne"
 pvesh create /pools --poolid zone-testing --comment "pool pour testing"
-pvesh create /pools --poolid zone.templates --comment "les templates sont la"
+pvesh create /pools --poolid zone-templates --comment "les templates sont la"
 
 # Templates 
 create_template 9001 "debian.template" "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
-create_template 9002 "alma.template" "https://repo.almalinux.org/almalinux/9/cloud/x86_64/images/AlmaLinux-9-GenericCloud-9.5-20241120.x86_64.qcow2"
-create_template 9003 "ubuntu.last.template" "https://cloud-images.ubuntu.com/oracular/current/oracular-server-cloudimg-amd64.img"
-create_template 9004 "ubuntu.lts.template" "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img"
+create_template 9002 "amazon.2.template" "https://cdn.amazonlinux.com/os-images/2.0.20250116.0/kvm/amzn2-kvm-2.0.20250116.0-x86_64.xfs.gpt.qcow2"
+create_template 9004 "ubuntu.lts.template" "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img"
 
 pvesh set /pools/zone.templates --vm 9001
 pvesh set /pools/zone.templates --vm 9002
 pvesh set /pools/zone.templates --vm 9003
-pvesh set /pools/zone.templates --vm 9004
 
 
 echo "Fin de création du paramétrage de bases de  proxmox"
