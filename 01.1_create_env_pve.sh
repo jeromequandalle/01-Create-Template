@@ -39,7 +39,7 @@ pvesh create /pools --poolid zone-exposee --comment "Pool infrastructure exposé
 pvesh create /pools --poolid zone-interne --comment "Pool service interne"
 pvesh create /pools --poolid zone-testing --comment "Pool pour testing"
 pvesh create /pools --poolid zone-templates --comment "Pool pour Templates"
-pvesh create /pools --poolid zone-firewall --commeent " Pool firewall
+pvesh create /pools --poolid zone-firewall --commeent "Pool firewall"
 
 
 # Templates 
